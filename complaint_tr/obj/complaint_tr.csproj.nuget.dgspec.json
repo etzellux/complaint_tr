@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/abs/projects/webp/complaint_tr/complaint_tr.csproj": {}
+    "/home/abs/projects/complaint_tr/complaint_tr/complaint_tr.csproj": {}
   },
   "projects": {
-    "/home/abs/projects/webp/complaint_tr/complaint_tr.csproj": {
+    "/home/abs/projects/complaint_tr/complaint_tr/complaint_tr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/abs/projects/webp/complaint_tr/complaint_tr.csproj",
+        "projectUniqueName": "/home/abs/projects/complaint_tr/complaint_tr/complaint_tr.csproj",
         "projectName": "complaint_tr",
-        "projectPath": "/home/abs/projects/webp/complaint_tr/complaint_tr.csproj",
+        "projectPath": "/home/abs/projects/complaint_tr/complaint_tr/complaint_tr.csproj",
         "packagesPath": "/home/abs/.nuget/packages/",
-        "outputPath": "/home/abs/projects/webp/complaint_tr/obj/",
+        "outputPath": "/home/abs/projects/complaint_tr/complaint_tr/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/abs/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "GoogleMaps.LocationServices": {
+              "target": "Package",
+              "version": "[1.2.0.5, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.5, )"

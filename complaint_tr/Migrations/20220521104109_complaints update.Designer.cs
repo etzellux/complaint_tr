@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using complaint_tr.Data;
 
@@ -10,9 +11,10 @@ using complaint_tr.Data;
 namespace complaint_tr.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220521104109_complaints update")]
+    partial class complaintsupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
@@ -99,10 +101,10 @@ namespace complaint_tr.Migrations
                     b.Property<bool>("is_approved")
                         .HasColumnType("INTEGER");
 
-                    b.Property<float?>("latitude")
+                    b.Property<float>("latitude")
                         .HasColumnType("REAL");
 
-                    b.Property<float?>("longitude")
+                    b.Property<float>("longitude")
                         .HasColumnType("REAL");
 
                     b.Property<string>("neighbourhood")

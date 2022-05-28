@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "GoogleMaps.LocationServices/1.2.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/GoogleMaps.LocationServices.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GoogleMaps.LocationServices.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -3236,6 +3245,18 @@
     }
   },
   "libraries": {
+    "GoogleMaps.LocationServices/1.2.0.5": {
+      "sha512": "0j3RL5+acxYgQNz72JdXJ1nUKxMGaY+6UvrOIOxZfp0qpJOUmo/ivCAm53atbnuy0z3vrZK+j9mZifh35UBqag==",
+      "type": "package",
+      "path": "googlemaps.locationservices/1.2.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "googlemaps.locationservices.1.2.0.5.nupkg.sha512",
+        "googlemaps.locationservices.nuspec",
+        "lib/netstandard2.0/GoogleMaps.LocationServices.dll"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -9878,6 +9899,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "GoogleMaps.LocationServices >= 1.2.0.5",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.5",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.5",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.5",
@@ -9893,11 +9915,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/abs/projects/webp/complaint_tr/complaint_tr.csproj",
+      "projectUniqueName": "/home/abs/projects/complaint_tr/complaint_tr/complaint_tr.csproj",
       "projectName": "complaint_tr",
-      "projectPath": "/home/abs/projects/webp/complaint_tr/complaint_tr.csproj",
+      "projectPath": "/home/abs/projects/complaint_tr/complaint_tr/complaint_tr.csproj",
       "packagesPath": "/home/abs/.nuget/packages/",
-      "outputPath": "/home/abs/projects/webp/complaint_tr/obj/",
+      "outputPath": "/home/abs/projects/complaint_tr/complaint_tr/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/abs/.nuget/NuGet/NuGet.Config"
@@ -9924,6 +9946,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "GoogleMaps.LocationServices": {
+            "target": "Package",
+            "version": "[1.2.0.5, )"
+          },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.5, )"

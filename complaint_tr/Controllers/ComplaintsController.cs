@@ -7,17 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using complaint_tr.Data;
 using complaint_tr.Models;
+using complaint_tr.Areas.Identity.Data;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
 
 namespace complaint_tr.Controllers
 {
     public class ComplaintsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private UserManager<User> _userManager;
 
-        public ComplaintsController(ApplicationDbContext context)
+
+        public ComplaintsController(ApplicationDbContext context, UserManager<User> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
+
+        public Complaint complaint{ get; set; }
 
         // GET: Complaints
         public async Task<IActionResult> Index()
@@ -55,16 +63,41 @@ namespace complaint_tr.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,province,district,neighbourhood,longitude,latitude,is_approved,type,posting_date")] Complaint complaint)
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,province,district,neighbourhood,second_line,longitude,latitude,type,posting_date,posted_by")] Complaint complaint)
         {
-            if (ModelState.IsValid)
+            Console.Out.WriteLine("here in  create");
+
+            var user = await _userManager.GetUserAsync(this.User);
+
+            if(!ModelState.IsValid)
             {
+                var message = string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
+                Console.Out.WriteLine(message);
+            }
+            Console.Out.Write(complaint.province + " ");
+            Console.Out.Write(complaint.district + " ");
+            Console.Out.Write(complaint.neighbourhood + " ");
+            Console.Out.Write(complaint.second_line + " ");
+            Console.Out.Write(complaint.longitude + " ");
+            Console.Out.Write(complaint.latitude + " ");
+            Console.Out.Write(complaint.is_approved + " ");
+            Console.Out.Write(complaint.type + " ");
+            Console.Out.Write(complaint.posting_date + " ");
+
+            complaint.posting_date = DateTime.Now.Date;
+            complaint.posted_by = user;
+            complaint.is_approved = false;
+            ModelState.ClearValidationState(nameof(Complaint));
+            Console.Out.WriteLine(TryValidateModel(complaint, nameof(Complaint)));
+            if (TryValidateModel(complaint, nameof(Complaint)))
+            {
+                Console.Out.WriteLine("model valid");
                 _context.Add(complaint);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(complaint);
+            return View();
         }
 
         // GET: Complaints/Edit/5
@@ -88,7 +121,7 @@ namespace complaint_tr.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,province,district,neighbourhood,longitude,latitude,is_approved,type,posting_date")] Complaint complaint)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,province,district,neighbourhood,second_line,longitude,latitude,type,posting_date,posted_by")] Complaint complaint)
         {
             if (id != complaint.Id)
             {

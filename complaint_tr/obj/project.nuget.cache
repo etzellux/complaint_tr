@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3GwgQ/wMBCMvYwwqtdcw0thIBmKzx3Q1EMjjvLFA1gmzFS+4E31+M6AmAMdmEGfDpT+i80Zqzc6jkh9nSIurAA==",
+  "dgSpecHash": "nnB0mT3wqCeetPWs73o0xDhCkZEJUkUN+ylsxdK9vOyu7NB/LJTBqNrSlYkBhlSWIezCN6iNAF5NXu+vnHIp/Q==",
   "success": true,
-  "projectFilePath": "/home/abs/projects/webp/complaint_tr/complaint_tr.csproj",
+  "projectFilePath": "/home/abs/projects/complaint_tr/complaint_tr/complaint_tr.csproj",
   "expectedPackageFiles": [
+    "/home/abs/.nuget/packages/googlemaps.locationservices/1.2.0.5/googlemaps.locationservices.1.2.0.5.nupkg.sha512",
     "/home/abs/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/abs/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
     "/home/abs/.nuget/packages/messagepack.annotations/2.1.152/messagepack.annotations.2.1.152.nupkg.sha512",

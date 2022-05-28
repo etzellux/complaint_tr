@@ -10,51 +10,15 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="province" class="control-label"></label>
-                <input asp-for="province" class="form-control" />
-                <span asp-validation-for="province" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="district" class="control-label"></label>
-                <input asp-for="district" class="form-control" />
-                <span asp-validation-for="district" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="neighbourhood" class="control-label"></label>
-                <input asp-for="neighbourhood" class="form-control" />
-                <span asp-validation-for="neighbourhood" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="longitude" class="control-label"></label>
-                <input asp-for="longitude" class="form-control" />
-                <span asp-validation-for="longitude" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="latitude" class="control-label"></label>
-                <input asp-for="latitude" class="form-control" />
-                <span asp-validation-for="latitude" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="is_approved" /> @Html.DisplayNameFor(model => model.is_approved)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="type" class="control-label"></label>
-                <input asp-for="type" class="form-control" />
-                <span asp-validation-for="type" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="posting_date" class="control-label"></label>
-                <input asp-for="posting_date" class="form-control" />
-                <span asp-validation-for="posting_date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+        <form action="/Complaints/Create" method="Post">
+            <input name="province" type="text" class="form-control" />
+            <input name="district" type="text" class="form-control" />
+            <input name="neighbourhood" type="text" class="form-control" />
+            <input name="second_line" type="text" class="form-control" />
+            <input name="longitude" type="text" class="form-control" />
+            <input name="latitude" type="text" class="form-control" />
+            <input name="type" type="text" class="form-control" />
+            <input type="submit" value="submit" class="btn btn-primary" />
         </form>
     </div>
 </div>
@@ -65,4 +29,5 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{Html.AntiForgeryToken();}
 }
