@@ -75,6 +75,46 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Notifications/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTm90aWZpY2F0aW9ucy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Notifications/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTm90aWZpY2F0aW9ucy9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Notifications/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTm90aWZpY2F0aW9ucy9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Notifications/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTm90aWZpY2F0aW9ucy9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Notifications/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTm90aWZpY2F0aW9ucy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Petitions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGV0aXRpb25zL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Petitions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGV0aXRpb25zL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Petitions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGV0aXRpb25zL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Petitions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGV0aXRpb25zL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Petitions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGV0aXRpb25zL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/abs/projects/complaint_tr/complaint_tr/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

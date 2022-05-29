@@ -12,6 +12,8 @@ public class ApplicationDbContext : IdentityDbContext<User>
     }
 
     public DbSet<Complaint> Complaints { get; set; }
+    public DbSet<Notification> Notifications { get; set; }
+    public DbSet<Petition> Petitions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
