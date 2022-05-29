@@ -119,8 +119,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Shared/_Head.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19IZWFkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/abs/projects/complaint_tr/complaint_tr/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Shared/_MapScript.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19NYXBTY3JpcHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Shared/_Nav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19OYXYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Shared/_Scripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19TY3JpcHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abs/projects/complaint_tr/complaint_tr/Views/Shared/_Section.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19TZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/abs/projects/complaint_tr/complaint_tr/Views/Shared/_ValidationScriptsPartial.cshtml]

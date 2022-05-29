@@ -1,25 +1,43 @@
 ﻿@page
 @model LoginModel
-
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Log In";
 }
 
-<h1>@ViewData["Title"]</h1>
-<div class="row">
-    <div class="col-md-4">
-        <section>
+@using Microsoft.AspNetCore.Identity
+@using complaint_tr.Areas.Identity.Data;
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+
+
+<header id="home" class="header">
+        <div class="overlay"></div>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
+            <div class="container">
+                <div class="carousel-inner">
+                    <div id="map">
+
+                    </div>
+                
+                @{await Html.RenderPartialAsync("_MapScript");}
+
+                </div>
+        
+        <div class="row">
+      
             <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
-                <hr />
+                <h2>Hesabınıza Giriş Yapın</h2>
+                <hr/>
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-floating">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <input style="background-color:white;" asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                     <label asp-for="Input.Email" class="form-label"></label>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
                 <div class="form-floating">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                    <input style="background-color:white;" asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
                     <label asp-for="Input.Password" class="form-label"></label>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
@@ -46,39 +64,53 @@
                     </p>
                 </div>
             </form>
-        </section>
     </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to log in.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
+    
+
+
+                        <div class="col-md-4 d-none d-md-block order-1">
+                            <ul class="list">
+                                <li class="list-head">
+                                    <h6>HERHANGİ BİR SORUNDA BİZE ULAŞ!</h6>
+                                </li>
+                                <li class="list-body">
+                                    <p class="py-2">Şikayetin 1 saat içinde onaylanacaktır!</p>
+                                    <p class="py-2"><i class="ti-email"></i>info@sikayetet.com</p>
+                                    <p class="py-2"><i class="ti-microphone"></i> (+90)599-860-85-46</p>
+        
+                                </li>
+                            </ul> 
                         </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
-</div>
+                    </div>
+            </div>        
+        </div>
+
+        <div class="infos container mb-4 mb-md-2">
+            <div class="title">
+                <h6 class="subtitle font-weight-normal">Eğer Merak Edersen</h6>
+                <h5>Bize Ulaş!</h5>
+                <p class="font-small">Sosyal Medya Hesaplarımız</p>
+            </div>
+            <div class="socials text-right">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <a class="d-block subtitle"><i class="ti-microphone pr-2"></i>(+90)599-860-85-46</a>
+                        <a class="d-block subtitle"><i class="ti-email pr-2"></i>info@sikayetet.com</a>
+                    </div>
+                    <div class="col">
+                        <h6 class="subtitle font-weight-normal mb-2">Sosyal Medya Hesapları</h6>
+                        <div class="social-links">
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-facebook"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-twitter-alt"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
