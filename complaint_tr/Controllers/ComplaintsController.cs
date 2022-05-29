@@ -10,7 +10,6 @@ using complaint_tr.Models;
 using complaint_tr.Areas.Identity.Data;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
-using GoogleMaps.LocationServices;
 
 namespace complaint_tr.Controllers
 {
@@ -65,7 +64,7 @@ namespace complaint_tr.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,province,district,neighbourhood,second_line,longitude,latitude,type,posting_date,posted_by")] Complaint complaint)
+        public async Task<IActionResult> Create([Bind("Id,province,district,neighbourhood,second_line,type,posting_date,posted_by,definition")] Complaint complaint)
         {
             Console.Out.WriteLine("here in  create");
 
@@ -82,11 +81,7 @@ namespace complaint_tr.Controllers
             complaint.posted_by = user;
             complaint.is_approved = false;
 
-            //var locationService = new GoogleLocationService();
             string address = complaint.province + complaint.district + complaint.neighbourhood;
-            //var point = locationService.GetLatLongFromAddress(address);
-            //complaint.latitude = (float) point.Latitude;
-            //complaint.longitude = (float) point.Longitude;
 
             ModelState.ClearValidationState(nameof(Complaint));
             Console.Out.WriteLine(TryValidateModel(complaint, nameof(Complaint)));
@@ -120,7 +115,7 @@ namespace complaint_tr.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,province,district,neighbourhood,second_line,longitude,latitude,type,posting_date,posted_by")] Complaint complaint)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,province,district,neighbourhood,second_line,type,posting_date,posted_by,definition")] Complaint complaint)
         {
             if (id != complaint.Id)
             {
