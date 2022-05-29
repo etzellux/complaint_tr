@@ -10,6 +10,7 @@ using complaint_tr.Models;
 using complaint_tr.Areas.Identity.Data;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
+using GoogleMaps.LocationServices;
 
 namespace complaint_tr.Controllers
 {
@@ -63,7 +64,7 @@ namespace complaint_tr.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,province,district,neighbourhood,second_line,longitude,latitude,type,posting_date,posted_by")] Complaint complaint)
         {
             Console.Out.WriteLine("here in  create");
@@ -74,25 +75,23 @@ namespace complaint_tr.Controllers
             {
                 var message = string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
                 Console.Out.WriteLine(message);
+                return View(complaint);
             }
-            Console.Out.Write(complaint.province + " ");
-            Console.Out.Write(complaint.district + " ");
-            Console.Out.Write(complaint.neighbourhood + " ");
-            Console.Out.Write(complaint.second_line + " ");
-            Console.Out.Write(complaint.longitude + " ");
-            Console.Out.Write(complaint.latitude + " ");
-            Console.Out.Write(complaint.is_approved + " ");
-            Console.Out.Write(complaint.type + " ");
-            Console.Out.Write(complaint.posting_date + " ");
 
             complaint.posting_date = DateTime.Now.Date;
             complaint.posted_by = user;
             complaint.is_approved = false;
+
+            //var locationService = new GoogleLocationService();
+            string address = complaint.province + complaint.district + complaint.neighbourhood;
+            //var point = locationService.GetLatLongFromAddress(address);
+            //complaint.latitude = (float) point.Latitude;
+            //complaint.longitude = (float) point.Longitude;
+
             ModelState.ClearValidationState(nameof(Complaint));
             Console.Out.WriteLine(TryValidateModel(complaint, nameof(Complaint)));
             if (TryValidateModel(complaint, nameof(Complaint)))
             {
-                Console.Out.WriteLine("model valid");
                 _context.Add(complaint);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
